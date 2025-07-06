@@ -15,12 +15,12 @@ export function CarouselDemo() {
       link: "public/Video Demo Website LookSky.mkv",
     },
     {
-      title: "Urban Dreams",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: "Pitchy Arduino & App",
+      description: "This Arduino project are maked using ESP32 for the module, using DHT11, Soil Moisture & Water Level for the sensors. And for the application aims to bring monitoring features to your plants from anywhere and anytime. By bringing Arduino technology and its sensors, as well as using Firebase as a database and Flutter as a medium for creating applications, we expect convenience for users. This Pitchy will also help you to find out the water content, soil moisture, and ambient temperature needed. You can click 'Explore' to attach you with my GitHub repo.",
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      link: "https://example.com",
+      src: "public/Circuit AOL ME Smt4.png",
+      link: "https://github.com/OCBryantW/Pitchy-Arduino-Apps/",
     },
     {
       title: "Neon Nights",
