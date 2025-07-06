@@ -23,7 +23,7 @@ export function CarouselDemo() {
       link: "https://github.com/OCBryantW/Pitchy-Arduino-Apps/",
     },
     {
-      title: "Neon Nights",
+      title: "Ooga Booga",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       button: "Explore Projects",
       miniButton: "Explore",
@@ -31,11 +31,11 @@ export function CarouselDemo() {
       link: "https://example.com",
     },
     {
-      title: "Desert Whispers",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: "Comming Soon",
+      description: "Comming Soon",
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "public/SampleImage.jpg",
       link: "https://example.com",
     },
   ];

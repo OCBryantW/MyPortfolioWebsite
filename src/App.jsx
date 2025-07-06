@@ -10,6 +10,19 @@ import { PreviewTracingBeam } from './components/ui/TracingBeamDemo'
 import Lenis from 'lenis';
 
 function App() {
+
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
   const contentRef = useRef(null);
 
   useEffect(() => {
