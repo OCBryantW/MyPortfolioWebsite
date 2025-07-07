@@ -10,6 +10,9 @@ import { PreviewTracingBeam } from './components/ui/TracingBeamDemo'
 import Lenis from 'lenis';
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // scroll ke atas saat refresh
+  }, []);
 
   useEffect(() => {
     const handleContextMenu = (e) => {
@@ -32,6 +35,17 @@ function App() {
       smooth: true,
       direction: 'vertical',
     })
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+    if (isReload) {
+      requestAnimationFrame(() => {
+        lenis.scrollTo(0, 0, { immediate: true });
+      });
+    }
 
     function raf(time) {
       lenis.raf(time)

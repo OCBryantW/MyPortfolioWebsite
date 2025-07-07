@@ -8,7 +8,7 @@ export function CarouselDemo() {
   const slideData = [
     {
       title: "LookSky",
-      description: "This project is an implementation of AI application, this site provides clothing recommendations following the sky image you send, AI will classify whether the image you send is Cloudy, Sunny, Rainy, or Foggy. I make this project using Streamlit Python. The web style isn't flexible following the Streamlit version, so I will show you the project video.",
+      description: "This project is an implementation of AI application, this site provides clothing recommendations following the sky image you send, AI will classify whether the image you send is Cloudy, Sunny, Rainy, or Foggy. I make this project using Streamlit Python. The web style isn't flexible following the Streamlit version, so I will show you the project video, you can click the 'Explore' button to download the video.",
       button: "Explore Projects",
       miniButton: "Explore",
       src: "/Look.png",
@@ -28,8 +28,20 @@ export function CarouselDemo() {
         <>
           I did not make this game project alone, but I made it with my team.{" "}
           Here are the team members who collaborated on this project: {" "}
-          <a href="https://github.com/your-team" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            team members
+          <a href="https://github.com/OCBryantW" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            Oei Christopher Bryant Widyanata (GitHub)
+          </a>{", "}
+          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            Frederica Sharon (IG)
+          </a>{", "}
+          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            Frederica Sharon (IG)
+          </a>{", "}
+          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            Frederica Sharon (IG)
+          </a>{", "}
+          <a href="https://github.com/OCBryantW" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            Oei Christopher Bryant Widyanata (GitHub)
           </a>{", "}
 
           This project is made using Unity 2D as its medium. For more details, please visit my GitHub repository by clicking on the 'Explore' button.
@@ -51,19 +63,6 @@ export function CarouselDemo() {
   ];
 
   const [activeCard, setActiveCard] = useState(null);
-  useEffect(() => {
-    const body = document.body;
-
-    if (activeCard !== null) {
-      body.classList.add('overflow-hidden');
-    } else {
-      body.classList.remove('overflow-hidden');
-    }
-
-    return () => {
-      body.classList.remove('overflow-hidden');
-    };
-  }, [activeCard]);
 
   return (
     <div className="relative overflow-hidden w-full h-full -mt-150">

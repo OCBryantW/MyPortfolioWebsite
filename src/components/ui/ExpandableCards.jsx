@@ -16,6 +16,24 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
     }
   });
 
+  // useEffect(() => {
+  //   function onKeyDown(event) {
+  //     if (event.key === "Escape") {
+  //       setActiveCard(false);
+  //     }
+  //   }
+
+  //   if(activeCard) setIsClosing(false);
+
+  //   if (activeCard && typeof activeCard === "object") {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+
+  //   window.addEventListener("keydown", onKeyDown);
+  //   return () => window.removeEventListener("keydown", onKeyDown);
+  // }, [activeCard]);
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
@@ -23,17 +41,41 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
       }
     }
 
-    if(activeCard) setIsClosing(false);
+    const body = document.body;
+
+    // Simpan posisi scroll sebelum mengunci
+    let scrollY = 0;
 
     if (activeCard && typeof activeCard === "object") {
-      document.body.style.overflow = "hidden";
+      setIsClosing(false);
+
+      scrollY = window.scrollY || window.pageYOffset;
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      body.style.left = '0';
+      body.style.right = '0';
+      body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      // Ambil kembali posisi scroll sebelumnya
+      const savedY = body.style.top;
+      body.style.position = '';
+      body.style.top = '';
+      body.style.left = '';
+      body.style.right = '';
+      body.style.overflow = '';
+      
+      // Scroll balik ke posisi awal
+      if (savedY) {
+        window.scrollTo(0, parseInt(savedY || '0') * -1);
+      }
     }
 
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [activeCard]);
+
 
   if (!activeCard) return null;
 
