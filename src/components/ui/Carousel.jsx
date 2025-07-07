@@ -11,36 +11,60 @@ export function CarouselDemo() {
       description: "This project is an implementation of AI application, this site provides clothing recommendations following the sky image you send, AI will classify whether the image you send is Cloudy, Sunny, Rainy, or Foggy. I make this project using Streamlit Python. The web style isn't flexible following the Streamlit version, so I will show you the project video.",
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "public/Look.png",
-      link: "public/Video Demo Website LookSky.mkv",
+      src: "/Look.png",
+      link: "/Video Demo Website LookSky.mkv",
     },
     {
       title: "Pitchy Arduino & App",
       description: "This Arduino project are maked using ESP32 for the module, using DHT11, Soil Moisture & Water Level for the sensors. And for the application aims to bring monitoring features to your plants from anywhere and anytime. By bringing Arduino technology and its sensors, as well as using Firebase as a database and Flutter as a medium for creating applications, we expect convenience for users. This Pitchy will also help you to find out the water content, soil moisture, and ambient temperature needed. You can click 'Explore' to attach you with my GitHub repo.",
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "public/Circuit AOL ME Smt4.png",
+      src: "/Circuit AOL ME Smt4.png",
       link: "https://github.com/OCBryantW/Pitchy-Arduino-Apps/",
     },
     {
       title: "Ooga Booga",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: (
+        <>
+          I did not make this game project alone, but I made it with my team.{" "}
+          Here are the team members who collaborated on this project: {" "}
+          <a href="https://github.com/your-team" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+            team members
+          </a>{", "}
+
+          This project is made using Unity 2D as its medium. For more details, please visit my GitHub repository by clicking on the 'Explore' button.
+        </>
+      ),
       button: "Explore Projects",
       miniButton: "Explore",
       src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      link: "https://example.com",
+      link: "https://github.com/OCBryantW/Ooga-Booga-Game-Projects",
     },
     {
       title: "Comming Soon",
       description: "Comming Soon",
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "public/SampleImage.jpg",
+      src: "/SampleImage.jpg",
       link: "https://example.com",
     },
   ];
 
   const [activeCard, setActiveCard] = useState(null);
+  useEffect(() => {
+    const body = document.body;
+
+    if (activeCard !== null) {
+      body.classList.add('overflow-hidden');
+    } else {
+      body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      body.classList.remove('overflow-hidden');
+    };
+  }, [activeCard]);
+
   return (
     <div className="relative overflow-hidden w-full h-full -mt-150">
             <Carousel slides={slideData} setActiveCard={setActiveCard} />
