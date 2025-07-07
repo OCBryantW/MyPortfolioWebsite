@@ -50,8 +50,8 @@ export function CarouselDemo() {
           Here are the team members who contributed to the project: {" "}
           <ul className="list-disc list-inside mt-2 space-y-1">
             <li>
-              <a href="" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-                Gleen Ryan (Github / IG)
+              <a href="https://github.com/Gleenryan" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Gleen Ryan (Github)
               </a>
             </li>
             <li>
@@ -60,8 +60,8 @@ export function CarouselDemo() {
               </a>
             </li>
             <li>
-              <a href="" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-                Aldo (Github / IG)
+              <a href="https://github.com/korneliusztx" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Kornelius Aldo (Github)
               </a>
             </li>
             <li>
@@ -82,7 +82,7 @@ export function CarouselDemo() {
       ),
       button: "Explore Projects",
       miniButton: "Explore",
-      src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/OogaBooga.png",
       link: "https://github.com/OCBryantW/Ooga-Booga-Game-Projects",
     },
     {
