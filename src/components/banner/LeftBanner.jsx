@@ -40,8 +40,8 @@ const LeftBanner = () => {
                                 />
                             </h2>
                             <p className='max-w-120'>
-                                Hi I'm Oei, Christopher Bryant Widyanata, a Computer Science major student at Bina Nusantara University.
-                                I have interest in website development and new things. I have experience in various languages and how to implement them in my project. I also have a goal to learn new things for the future.
+                                Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
+                                I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
                             </p>
                         </div>
                         <div className='relative  flex left-0 bottom-0

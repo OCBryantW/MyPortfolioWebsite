@@ -108,7 +108,7 @@ const Contacts = () => {
       </div>
 
       <div className='flex flex-col gap-8'>
-        <h3 className='flex justify-center text-lg text-quart'>Follow my social media to know me more</h3>
+        <h3 className='flex justify-center text-center text-lg text-quart'>Feel free to follow me on social media to get to know me better <br /> and stay updated with my projects.</h3>
         <div className='flex gap-4 text-quart xl:text-prim justify-center'>
           <a href="https://www.instagram.com/lhmbrynt/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
             <FaInstagram />

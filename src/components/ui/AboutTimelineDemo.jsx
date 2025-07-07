@@ -19,7 +19,7 @@ export function AboutTimelineDemo() {
             <div>
             <p
                 className="text-neutral-800 dark:text-neutral-200 text-md md:text-lg font-normal mb-8">
-                I studied at Terang Bangsa Christian Senior High School in Semarang, Indonesia.
+                I completed my senior high school education at Terang Bangsa Christian Senior High School in Semarang, Indonesia.
             </p>
             <div className="grid grid-cols-2 gap-4">
                 <img 
@@ -31,7 +31,7 @@ export function AboutTimelineDemo() {
             </div>
             <p
                 className="text-neutral-800 dark:text-neutral-200 text-md md:text-lg font-normal mt-8">
-                My Average score of all subjects: 89.2 <br />
+                Achieved an overall average score of 89.2 across all subjects. <br />
             </p>
             </div>
         ),
@@ -43,7 +43,7 @@ export function AboutTimelineDemo() {
             <div>
             <p
                 className="text-neutral-800 dark:text-neutral-200 text-md md:text-lg font-normal mb-8">
-                In mid-2023, specifically in September, I began my university studies at BINUS University in Semarang, majoring in Computer Science, and I am still currently pursuing this program.
+                In September 2023, I began my undergraduate studies in Computer Science at BINUS University, Semarang, and I am currently continuing this program.
             </p>
             <div className="grid grid-cols-2 gap-4">
             <img 
@@ -54,7 +54,7 @@ export function AboutTimelineDemo() {
             </div>
             <p
                 className="text-neutral-800 dark:text-neutral-200 text-md md:text-lg font-normal mt-8">
-                My Current GPA Score: 3.64 <br />
+                Current GPA: 3.64 (on a 4.0 scale) <br />
             </p>
             </div>
         ),

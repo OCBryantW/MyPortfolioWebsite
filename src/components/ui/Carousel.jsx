@@ -8,7 +8,16 @@ export function CarouselDemo() {
   const slideData = [
     {
       title: "LookSky",
-      description: "This project is an implementation of AI application, this site provides clothing recommendations following the sky image you send, AI will classify whether the image you send is Cloudy, Sunny, Rainy, or Foggy. I make this project using Streamlit Python. The web style isn't flexible following the Streamlit version, so I will show you the project video, you can click the 'Explore' button to download the video.",
+      description: (
+        <>
+        This project is an implementation of an AI-based application.<br />
+        The website provides clothing recommendations based on a sky image uploaded by the user. The AI model classifies the image into one of four weather conditions: Cloudy, Sunny, Rainy, or Foggy.<br />
+        This project was developed using Python with the Streamlit framework.<br />
+        <br />
+        Please note that the web styling may not be fully responsive due to limitations in the current version of Streamlit.<br />
+        To view the project in action, you can watch the demo video by clicking the "Explore" button below to download it.<br />
+        </>
+      ) ,
       button: "Explore Projects",
       miniButton: "Explore",
       src: "/Look.png",
@@ -16,7 +25,18 @@ export function CarouselDemo() {
     },
     {
       title: "Pitchy Arduino & App",
-      description: "This Arduino project are maked using ESP32 for the module, using DHT11, Soil Moisture & Water Level for the sensors. And for the application aims to bring monitoring features to your plants from anywhere and anytime. By bringing Arduino technology and its sensors, as well as using Firebase as a database and Flutter as a medium for creating applications, we expect convenience for users. This Pitchy will also help you to find out the water content, soil moisture, and ambient temperature needed. You can click 'Explore' to attach you with my GitHub repo.",
+      description: (
+        <>
+        This Arduino project is built using an ESP32 module, incorporating DHT11, soil moisture, and water level sensors.<br />
+        The application is designed to provide real-time remote monitoring of your plants—anytime and anywhere.<br />
+
+        By leveraging Arduino technology and its sensor suite, along with Firebase for cloud data storage and Flutter for the mobile application interface, this project aims to offer users a convenient and accessible plant monitoring solution.<br />
+
+        Pitchy helps you track essential environmental factors such as ambient temperature, soil moisture, and water level to support better plant care.<br />
+
+        You can click the "Explore" button to visit the GitHub repository and learn more about the project.<br />
+        </>
+      ) ,
       button: "Explore Projects",
       miniButton: "Explore",
       src: "/Circuit AOL ME Smt4.png",
@@ -26,25 +46,38 @@ export function CarouselDemo() {
       title: "Ooga Booga",
       description: (
         <>
-          I did not make this game project alone, but I made it with my team.{" "}
-          Here are the team members who collaborated on this project: {" "}
-          <a href="https://github.com/OCBryantW" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            Oei Christopher Bryant Widyanata (GitHub)
-          </a>{", "}
-          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            Frederica Sharon (IG)
-          </a>{", "}
-          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            Frederica Sharon (IG)
-          </a>{", "}
-          <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            Frederica Sharon (IG)
-          </a>{", "}
-          <a href="https://github.com/OCBryantW" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
-            Oei Christopher Bryant Widyanata (GitHub)
-          </a>{", "}
-
-          This project is made using Unity 2D as its medium. For more details, please visit my GitHub repository by clicking on the 'Explore' button.
+          This game project was a collaborative effort developed together with my team. {" "}
+          Here are the team members who contributed to the project: {" "}
+          <ul className="list-disc list-inside mt-2 space-y-1">
+            <li>
+              <a href="" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Gleen Ryan (Github / IG)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mammami44" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Mammami44 (GitHub)
+              </a>
+            </li>
+            <li>
+              <a href="" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Aldo (Github / IG)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/fredericasharon/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Frederica Sharon (IG)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/OCBryantW" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+                Oei Christopher Bryant Widyanata (GitHub)
+              </a>
+            </li>
+          </ul>
+          <br />
+          The game was developed using Unity 2D as the main development platform.<br />
+          For more information and to explore the source code, feel free to visit the GitHub repository by clicking the "Explore" button below.
         </>
       ),
       button: "Explore Projects",
