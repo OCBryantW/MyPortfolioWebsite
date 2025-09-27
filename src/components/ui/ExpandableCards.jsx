@@ -15,25 +15,6 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
       setTimeout(() => setActiveCard(null), 250); // waktu exit animation
     }
   });
-
-  // useEffect(() => {
-  //   function onKeyDown(event) {
-  //     if (event.key === "Escape") {
-  //       setActiveCard(false);
-  //     }
-  //   }
-
-  //   if(activeCard) setIsClosing(false);
-
-  //   if (activeCard && typeof activeCard === "object") {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "auto";
-  //   }
-
-  //   window.addEventListener("keydown", onKeyDown);
-  //   return () => window.removeEventListener("keydown", onKeyDown);
-  // }, [activeCard]);
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
