@@ -88,7 +88,7 @@ const LeftBanner = () => {
                         mt-0 pt-65 
                         md:pt-65
                         lg:pt-35
-                        xl:mt-25 xl:pt-20 xl:w-200 
+                         xl:w-200 
                         bg-prim xl:bg-transparent
                         `}
                         >
@@ -122,7 +122,7 @@ const LeftBanner = () => {
                         </div>
                         <div className='flex w-66 h-66 rounded-full border-4 border-quart z-20 mt-11 self-center absolute overflow-hidden drop-shadow-lg drop-shadow-tert
                         lg:w-100 lg:h-123 lg:rounded-xl lg:border-4 lg:border-quart lg:ml-[90%] lg:-translate-x-1/2 lg:mt-30 lg:items-center
-                        xl:w-95 xl:h-120 xl:rounded-xl xl:border-t-[6px] xl:border-l-[6px] xl:border-t-quart xl:border-l-quart xl:-mt-36 xl:ml-255
+                        xl:w-95 xl:h-120 xl:rounded-xl xl:border-t-[6px] xl:border-l-[6px] xl:border-t-quart xl:border-l-quart xl:-mt-47 xl:ml-255
                         '>
                             <img src={bannerImg} alt='bannerImg' className='w-full h-full object-cover ' />
                         </div>
