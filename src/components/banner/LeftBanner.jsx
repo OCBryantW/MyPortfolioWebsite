@@ -54,7 +54,7 @@ const LeftBanner = () => {
     return (    
         <>
             <section className="mt-0 pt-0 bg-none 
-            md:max-w-[97.5%] 2xl:max-w-373 md:h-auto md:pb-0 xl:pb-68 bg-quart">
+            md:max-w-[97.5%] 2xl:max-w-[100%] md:h-auto md:pb-0 xl:pb-68 bg-quart">
                 <div className='md:flex'>
                     <div className={`flex flex-col gap-15 
                     mt-0 pt-65 w-full h-290 sm:h-220 ml-0 pb-184

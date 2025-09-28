@@ -58,7 +58,7 @@ function App() {
   return (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <div className = "w-full h-auto overflow-clip debug-screens">
+    <div className = "w-full h-auto overflow-clip">
       <div className="max-w-full mx-auto bg-linear-90 from-tert to-prim">
         <Navbar />
         <div>
