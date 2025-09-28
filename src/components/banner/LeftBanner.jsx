@@ -59,7 +59,7 @@ const LeftBanner = () => {
                     <div className={`flex flex-col gap-15 
                     mt-0 pt-65 w-full h-290 sm:h-220 ml-0 pb-184
                     md:pb-100 md:pt-65 md:h-260
-                    xl:mt-25 xl:pt-20 xl:w-200 xl:h-133 xl:ml-60 xl:pb-100 bg-prim`}
+                    xl:mt-25 xl:pt-20 xl:w-200 xl:h-133 xl:ml-[16%] xl:pb-100 bg-prim`}
                     >
                         <div className=' flex flex-col gap-5 text-quart pt-15 justify-center px-6 lg:pt-0 sm:pl-10 sm:justify-items-start sm:px-0 md:items-center lg:items-start'>
                             <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
