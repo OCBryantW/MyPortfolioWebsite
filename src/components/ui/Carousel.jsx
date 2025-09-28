@@ -98,7 +98,7 @@ export function CarouselDemo() {
   const [activeCard, setActiveCard] = useState(null);
 
   return (
-    <div className="relative overflow-hidden w-full h-full -mt-150">
+    <div className="relative overflow-hidden w-full h-[60%] -mt-150">
             <Carousel slides={slideData} setActiveCard={setActiveCard} />
             <ExpandableCardDemo activeCard={activeCard} setActiveCard={setActiveCard} />
     </div>
@@ -232,12 +232,12 @@ const CarouselControl = ({
 }) => {
   return (
     <button
-      className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-tert focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
+      className={`w-20 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-tert focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
         type === "previous" ? "rotate-180" : ""
       }`}
       title={title}
       onClick={handleClick}>
-      <TbArrowNarrowRight className="text-neutral-600 dark:text-neutral-200" />
+      <TbArrowNarrowRight className="text-neutral-600 dark:text-neutral-200 size-7" />
     </button>
   );
 };

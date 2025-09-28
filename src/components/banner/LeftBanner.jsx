@@ -1,9 +1,36 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import { FaInstagram, FaLinkedinIn, FaGithub, FaReact } from 'react-icons/fa';
-import { SiTailwindcss, SiFigma, SiPython, SiHtml5, SiC, SiStreamlit } from 'react-icons/si';
+import { bannerImg } from '../../assets/index'
 import '../../App.css'
+import Items from './Items';
 // import { useEffect, useState } from "react";
+
+// import { useEffect, useState } from "react";
+
+// function CenteredItems() {
+//   const [centerStyle, setCenterStyle] = useState({});
+
+//   useEffect(() => {
+//     function updateCenter() {
+//       const screenWidth = window.innerWidth;
+//       const itemWidth = 200; // misalnya lebar tetap <Items />
+//       const left = (screenWidth - itemWidth) / 5;
+//       setCenterStyle({ width: itemWidth, marginLeft: left });
+//     }
+
+//     updateCenter();
+//     window.addEventListener("resize", updateCenter);
+//     return () => window.removeEventListener("resize", updateCenter);
+//   }, []);
+
+//   return (
+    
+//       <div style={centerStyle}>
+//         <Items />
+//       </div>
+//   );
+// }
+
 
 // Tombol link (rantai)
 function LinkButton({ link }) {
@@ -53,99 +80,54 @@ const LeftBanner = () => {
 
     return (    
         <>
-            <section className="mt-0 pt-0 bg-none 
-            md:max-w-[97.5%] 2xl:max-w-[100%] md:h-auto md:pb-0 xl:pb-68 bg-quart">
-                <div className='md:flex'>
-                    <div className={`flex flex-col gap-15 left-5/12 -translate-x-[-15%] z-10
-                    mt-0 pt-65 w-full h-290 sm:h-220 ml-0 pb-184
-                    md:pb-100 md:pt-65 md:h-260
-                    xl:mt-25 xl:pt-20 xl:w-200 xl:h-133 xl:ml-[10%] xl:pb-100 bg-prim`}
-                    >
-                        <div className=' flex flex-col gap-5 text-quart pt-15 justify-center px-6 lg:pt-0 sm:pl-10 sm:justify-items-start sm:px-0 md:items-center lg:items-start'>
-                            <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
-                            <h1 className='text-6xl font-bold text-quart'>
-                                Hi, I'm {" "}
-                                <span className='text-tert capitalize'>Bryant</span>
-                            </h1>
-                            <h2 className='text-4xl font-bold text-quart'>
-                                {["A", "E", "I", "O", "U"].includes(text.charAt(0).toUpperCase()) ? "an " : "a "}
-                                <span>{text}</span>
-                                <Cursor
-                                    cursorBlinking="false"
-                                    cursorStyle="|"
-                                    cursorColor="#00adb5"
-                                />
-                            </h2>
-                            <p className='max-w-120'>
-                                Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
-                                I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
-                            </p>
-                            <LinkButton link={"https://drive.google.com/file/d/13SjT10aezbXpE8Ync9-aZ2Cy9CgxXnU2/view?usp=sharing"}/>
+                <div className='w-full mt-0 pt-0 bg-none ml-0
+             md:h-auto  bg-quart flex flex-col'>
+                    <div className=' flex flex-col h-full xl:flex-row xl:justify-center xl:gap-80 lg:justify-between lg:gap-1'>
+                        <div className={` h-full
+                        xl:-ml-50
+                        mt-0 pt-65 
+                        md:pt-65
+                        lg:pt-35
+                        xl:mt-25 xl:pt-20 xl:w-200 
+                        bg-prim xl:bg-transparent
+                        `}
+                        >
+                            <div className='relative flex flex-col gap-5 text-quart pt-15 justify-center
+                                lg:pt-0 sm:justify-items-start sm:px-0 sm:items-center lg:ml-16 xl:ml-5 xl:px-10 xl:py-5 lg:items-start xl:bg-prim'>
+                                <div className='py-10 flex flex-col gap-5'>
+                                    <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
+                                    <h1 className='text-6xl font-bold text-quart'>
+                                        Hi, I'm {" "}
+                                        <span className='text-tert capitalize'>Bryant</span>
+                                    </h1>
+                                    <h2 className='text-4xl font-bold text-quart'>
+                                        {["A", "E", "I", "O", "U"].includes(text.charAt(0).toUpperCase()) ? "an " : "a "}
+                                        <span>{text}</span>
+                                        <Cursor
+                                            cursorBlinking="false"
+                                            cursorStyle="|"
+                                            cursorColor="#00adb5"
+                                        />
+                                    </h2>
+                                    <p className='max-w-120'>
+                                        Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
+                                        I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
+                                    </p>
+                                    <LinkButton link={"https://drive.google.com/file/d/13SjT10aezbXpE8Ync9-aZ2Cy9CgxXnU2/view?usp=sharing"}/>
+                                </div>
+                            </div>
+                            <div className='xl:translate-x-[13%]'>
+                                <Items />
+                            </div>
                         </div>
-                        <div className='relative flex left-0 bottom-0
-                        ml-8 mt-0 flex-col gap-15
-                        sm:ml-0
-                        sm:justify-center sm:flex-row sm:gap-18 md:gap-40
-                        xl:-ml-80 xl:flex-row xl:gap-15'>
-                            <div>
-                                <h2 className='text-base uppercase mb-4 pl-10 w-full sm:text-center sm:pl-0 text-quart xl:text-prim'>
-                                    Find me in
-                                </h2>
-                                <div className='flex gap-4 text-quart xl:text-prim'>
-                                    <span className='bannerIcon'>
-                                        <a href="https://www.instagram.com/lhmbrynt/" target="_blank" rel="noopener noreferrer">
-                                            <FaInstagram/>
-                                        </a>
-                                    </span>
-                                    <span className='bannerIcon'>
-                                        <a href="https://www.linkedin.com/in/oei-bryant-90b764294/" target="_blank" rel="noopener noreferrer">
-                                            <FaLinkedinIn/>
-                                        </a>
-                                    </span>
-                                    <span className='bannerIcon'>
-                                        <a href="https://github.com/OCBryantW" target="_blank" rel="noopener noreferrer">
-                                            <FaGithub/>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <h2 className='text-base uppercase text-quart
-                                mb-4 pl-10 w-full sm:text-center sm:pl-0 xl:text-prim'>
-                                    Best skill on
-                                </h2>
-                                <div className='flex flex-col gap-y-4 text-quart xl:text-prim'>
-                                    <div className='flex flex-row gap-4'>
-                                        <span className='bannerIcon'>
-                                            <SiTailwindcss/>
-                                        </span>
-                                        <span className='bannerIcon'>
-                                            <SiFigma/>
-                                        </span>
-                                        <span className='bannerIcon'>
-                                            <SiPython/>
-                                        </span>
-                                        <span className='bannerIcon'>
-                                            <SiHtml5/>
-                                        </span>
-                                    </div>
-                                    <div className='flex flex-row gap-4'>
-                                        <span className='bannerIcon'>
-                                            <FaReact/>
-                                        </span>
-                                        <span className='bannerIcon'>
-                                            <SiC/>
-                                        </span>
-                                        <span className='bannerIcon'>
-                                            <SiStreamlit/>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className='flex w-66 h-66 rounded-full border-4 border-quart z-20 mt-11 self-center absolute overflow-hidden drop-shadow-lg drop-shadow-tert
+                        lg:w-100 lg:h-123 lg:rounded-xl lg:border-4 lg:border-quart lg:ml-[90%] lg:-translate-x-1/2 lg:mt-30 lg:items-center
+                        xl:w-95 xl:h-120 xl:rounded-xl xl:border-t-[6px] xl:border-l-[6px] xl:border-t-quart xl:border-l-quart xl:-mt-36 xl:ml-255
+                        '>
+                            <img src={bannerImg} alt='bannerImg' className='w-full h-full object-cover ' />
                         </div>
                     </div>
                 </div>
-            </section>
         </>
     )
 }
