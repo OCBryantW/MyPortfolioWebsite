@@ -56,11 +56,10 @@ const LeftBanner = () => {
             <section className="mt-0 pt-0 bg-none 
             md:max-w-[97.5%] 2xl:max-w-[100%] md:h-auto md:pb-0 xl:pb-68 bg-quart">
                 <div className='md:flex'>
-                    <div className={`flex flex-col gap-15 
+                    <div className={`flex flex-col gap-15 left-5/12 -translate-x-[-15%] z-10
                     mt-0 pt-65 w-full h-290 sm:h-220 ml-0 pb-184
                     md:pb-100 md:pt-65 md:h-260
-                    xl:mt-25 xl:pt-20 xl:w-200 xl:h-133 xl:ml-[30%] xl:pb-100
-                    2xl:ml-[16%] bg-prim`}
+                    xl:mt-25 xl:pt-20 xl:w-200 xl:h-133 xl:ml-[10%] xl:pb-100 bg-prim`}
                     >
                         <div className=' flex flex-col gap-5 text-quart pt-15 justify-center px-6 lg:pt-0 sm:pl-10 sm:justify-items-start sm:px-0 md:items-center lg:items-start'>
                             <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
