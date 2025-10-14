@@ -54,7 +54,7 @@ export function AboutTimelineDemo() {
             </div>
             <p
                 className="text-neutral-800 dark:text-neutral-200 text-md md:text-lg font-normal mt-8">
-                Current GPA: 3.64 (on a 4.0 scale) <br />
+                Current GPA: 3.69 (on a 4.0 scale) <br />
             </p>
             </div>
         ),

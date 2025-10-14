@@ -35,7 +35,7 @@ const AnimatedLine = ({isTabletOrLarger}) => {
                     }
                 : {duration: 0}
             }
-            className="absolute inset-auto z-50 h-0.5 w-[33rem] -translate-y-[23rem] bg-quart"
+            className="absolute inset-auto z-50 h-0.5 w-[33rem] -translate-y-[3.1rem] md:-translate-y-[6.2rem] lg:-translate-y-[7.8rem] bg-quart"
         />
     );
 };
@@ -67,7 +67,7 @@ export function LampDemo() {
                 }
                 : {duration: 0}
             }
-            className="-mt-86 bg-gradient-to-br from-tert to-quart py-4 bg-clip-text text-center text-5xl font-medium tracking-tight text-transparent md:text-6xl lg:text-7xl">
+            className="-mt-46 lg:-mt-76 bg-gradient-to-br from-tert to-quart py-4 bg-clip-text text-center text-5xl font-medium tracking-tight text-transparent md:text-6xl lg:text-7xl">
             My Projects
         </Motion.h1>
         </LampContainer>
@@ -92,11 +92,11 @@ export const LampContainer = ({
     return (
         <div
         className={cn(
-            "flex h-full flex-col items-center justify-center overflow-hidden bg-linear-90 from-tert to-prim w-full rounded-md z-0",
+            "flex h-[500px] md:h-[600px] lg:h-[650px] flex-col items-center justify-center bg-linear-90 from-tert to-prim w-full rounded-md z-0 relative",
             className
         )}>
         <div
-            className=" flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
+            className="flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
             <Motion.div
             initial={baseInitial}
             whileInView={{ opacity: 1, width: "30rem" }}
@@ -106,9 +106,9 @@ export const LampContainer = ({
             }}
             className="absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-quart via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]">
             <div
-                className="absolute  w-[100%] left-0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+                className="absolute w-[100%] left-0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
             <div
-                className="absolute  w-40 h-[100%] left-0 bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
+                className="absolute w-40 h-[100%] left-0 bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]" />
             </Motion.div>
             <Motion.div
             initial={baseInitial}
@@ -119,34 +119,26 @@ export const LampContainer = ({
             }}
             className="absolute inset-auto left-1/12 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-quart text-white [--conic-position:from_290deg_at_center_top]">
             <div
-                className="absolute  w-40 h-[100%] right-0 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
+                className="absolute w-40 h-[100%] right-0 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
             <div
-                className="absolute  w-[100%] right-0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
+                className="absolute w-[100%] right-0 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
             </Motion.div>
             <div
             className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
             <div
-            className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-66 rounded-full bg-quart opacity-50 blur-3xl"></div>
+            className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-16 rounded-full bg-quart opacity-50 blur-3xl"></div>
             <Motion.div
             initial={isTabletOrLarger ? { width: "8rem" } : false}
             whileInView={{ width: "16rem" }}
             transition={baseTransition}
-            className="absolute inset-auto z-30 h-36 w-64 -translate-y-[23rem] rounded-full bg-quart blur-2xl"></Motion.div>
-            {/* <Motion.div
-            initial={{ width: "15rem" }}
-            whileInView={{ width: "30rem" }}
-            transition={{
-                delay: 0.3,
-                duration: 0.8,
-                ease: "easeInOut",
-            }}
-            className="absolute inset-auto z-50 h-0.5 w-[33rem] -translate-y-[23rem] bg-quart "></Motion.div> */}
-            <AnimatedLine isTabletOrLarger = {isTabletOrLarger}/>
+            className="absolute inset-auto z-30 h-36 w-64 -translate-y-[7rem] md:-translate-y-[10rem] lg:-translate-y-[11rem] rounded-full bg-quart blur-2xl"></Motion.div>
+            
+            <AnimatedLine isTabletOrLarger={isTabletOrLarger}/>
 
             <div
-            className="absolute inset-auto z-50 h-66 w-full -translate-y-[31.4rem] bg-linear-90 from-tert to-prim"></div>
+            className="absolute inset-auto z-50 h-46 w-full -translate-y-[13rem] bg-linear-90 from-tert to-prim top-56"></div>
         </div>
-        <div className="relative z-50 flex -translate-y-140 flex-col items-center px-5">
+        <div className="relative z-50 flex -translate-y-20 md:-translate-y-24 flex-col items-center px-5">
             {children}
         </div>
         </div>

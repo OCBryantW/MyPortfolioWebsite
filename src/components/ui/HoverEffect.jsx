@@ -10,7 +10,7 @@ export const projects = [
     { title: <SiTailwindcss/>, percent: 80 },
     { title: <SiPython/>, percent: 80 },
     { title: <SiStreamlit/>, percent: 85},
-    { title: <FaReact/>, percent: 69 },
+    { title: <FaReact/>, percent: 70 },
     { title: <SiFigma/>, percent: 68 },
     { title: <FaUnity/>, percent: 71 },
     { title: <SiArduino/>, percent: 62 },

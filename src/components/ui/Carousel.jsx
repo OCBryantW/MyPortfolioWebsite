@@ -98,7 +98,7 @@ export function CarouselDemo() {
   const [activeCard, setActiveCard] = useState(null);
 
   return (
-    <div className="relative overflow-hidden w-full h-[60%] -mt-150">
+    <div className="relative w-full min-h-[70vmin] py-8">
             <Carousel slides={slideData} setActiveCard={setActiveCard} />
             <ExpandableCardDemo activeCard={activeCard} setActiveCard={setActiveCard} />
     </div>
@@ -268,7 +268,7 @@ export function Carousel({
 
   return (
     <div
-      className="relative w-[70vmin] h-[70vmin] mx-auto"
+      className="relative w-[70vmin] h-[70vmin] mx-auto mb-20"
       aria-labelledby={`carousel-heading-${id}`}>
       <ul
         className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
@@ -286,7 +286,7 @@ export function Carousel({
             />
         ))}
       </ul>
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)] z-20">
         <CarouselControl
           type="previous"
           title="Go to previous slide"

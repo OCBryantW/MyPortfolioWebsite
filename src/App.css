@@ -152,5 +152,15 @@
     position: absolute;
   }
   
+  /* Hilangkan scrollbar tapi tetap bisa scroll pakai mouse wheel */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* Untuk Internet Explorer dan Edge lama */
+    scrollbar-width: none;     /* Untuk Firefox */
+  }
+
   
 

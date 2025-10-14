@@ -6,9 +6,11 @@ import { ExpandableCardDemo } from '../ui/ExpandableCards'
 const Projects = () => {
     return (
         <>
-            <section id='projects' className="w-full h-[1300px] pt-10 pb-20 flex flex-col items-center ">
+            <section id='projects' className="w-full pt-10 pb-32 flex flex-col items-center">
                 <LampDemo />
-                <CarouselDemo/>
+                <div className="-mt-20">
+                    <CarouselDemo/>
+                </div>
                 {/* <ExpandableCardDemo/> */}
             </section>
         </>

@@ -2,19 +2,33 @@
 
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion as Motion} from "motion/react";
-import { useOutsideClick } from "./useOutsideClick";
+
+// Mock hook untuk demo - ganti dengan useOutsideClick asli kamu
+const useOutsideClick = (ref, callback) => {
+  useEffect(() => {
+    const handleClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [ref, callback]);
+};
 
 export function ExpandableCardDemo({activeCard, setActiveCard}) {
   const ref = useRef(null);
   const id = useId();
   const [isClosing, setIsClosing] = useState(false);
+  const scrollRef = useRef(null);
 
   useOutsideClick(ref, () => {
     if(!isClosing) {
       setIsClosing(true);
-      setTimeout(() => setActiveCard(null), 250); // waktu exit animation
+      setTimeout(() => setActiveCard(null), 250);
     }
   });
+
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
@@ -23,21 +37,36 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
     }
 
     const body = document.body;
-
-    // Simpan posisi scroll sebelum mengunci
     let scrollY = 0;
 
     if (activeCard && typeof activeCard === "object") {
       setIsClosing(false);
-
       scrollY = window.scrollY || window.pageYOffset;
       body.style.position = 'fixed';
       body.style.top = `-${scrollY}px`;
       body.style.left = '0';
       body.style.right = '0';
       body.style.overflow = 'hidden';
+
+      const scrollContainer = scrollRef.current;
+      if (!scrollContainer) return;
+
+      // Pastikan kontainer bisa menerima event scroll
+      scrollContainer.style.overflowY = "auto";
+
+      const handleWheel = (event) => {
+        // Pastikan hanya mencegah scroll halaman utama
+        const isScrollable =
+          scrollContainer.scrollHeight > scrollContainer.clientHeight;
+        if (isScrollable) {
+          event.preventDefault();
+          scrollContainer.scrollTop += event.deltaY;
+        }
+      };
+
+    scrollContainer.addEventListener("wheel", handleWheel, { passive: false });
+    return () => scrollContainer.removeEventListener("wheel", handleWheel);
     } else {
-      // Ambil kembali posisi scroll sebelumnya
       const savedY = body.style.top;
       body.style.position = '';
       body.style.top = '';
@@ -45,7 +74,6 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
       body.style.right = '';
       body.style.overflow = '';
       
-      // Scroll balik ke posisi awal
       if (savedY) {
         window.scrollTo(0, parseInt(savedY || '0') * -1);
       }
@@ -57,8 +85,9 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
     };
   }, [activeCard]);
 
-
   if (!activeCard) return null;
+
+    
 
   return (
     <>
@@ -78,19 +107,10 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
             <Motion.button
               key={`popup-${activeCard.title}-${id}`}
               layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
-              }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.05 } }}
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6 z-10"
               onClick={() => {
                 requestAnimationFrame(() => {
                   if (!isClosing) {
@@ -109,13 +129,14 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={!isClosing ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
-
               transition={{
                 duration: 0.25,
-                ease: [0.25, 0.1, 0.25, 1]  // cubic-bezier ease-in-out
+                ease: [0.25, 0.1, 0.25, 1]
               }}
-              className="w-full max-w-[340px] max-h-[60%] sm:max-w-[460px] sm:max-h-[70%] md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-x-hidden">
-              <Motion.div layoutId={`image-${activeCard.title}-${id}`}>
+              className="w-full max-w-[340px] max-h-[60%] sm:max-w-[460px] sm:max-h-[70%] md:max-w-[600px] md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden">
+              
+              {/* Image Section */}
+              <Motion.div layoutId={`image-${activeCard.title}-${id}`} className="flex-shrink-0">
                 <img
                   width={200}
                   height={200}
@@ -124,9 +145,10 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
                   className="w-full h-80 lg:h-87 rounded-tr-lg rounded-tl-lg object-cover object-top" />
               </Motion.div>
 
-              <div>
+              {/* Content Section - Scrollable */}
+              <div ref={scrollRef} className="overflow-y-auto max-h-[80vh] scrollbar-thin no-scrollbar scrollbar-track-transparent">
                 <div className="flex justify-between items-start p-4">
-                  <div className="">
+                  <div className="flex-1">
                     <Motion.h3
                       layoutId={`title-${activeCard.title}-${id}`}
                       className="font-bold text-neutral-700 dark:text-neutral-200">
@@ -134,7 +156,7 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
                     </Motion.h3>
                     <Motion.p
                       layoutId={`description-${activeCard.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400">
+                      className="text-neutral-600 dark:text-neutral-400 mt-2">
                       {activeCard.description}
                     </Motion.p>
                   </div>
@@ -143,17 +165,18 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
                     layoutId={`button-${activeCard.title}-${id}`}
                     href={activeCard.link}
                     target="_blank"
-                    className="px-3.5 py-2.5 text-sm rounded-full font-bold bg-tert text-white">
+                    className="px-3.5 py-2.5 text-sm rounded-full font-bold bg-cyan-500 text-white ml-4 flex-shrink-0">
                     {activeCard.miniButton}
                   </Motion.a>
                 </div>
-                <div className="pt-4 relative px-4">
+                
+                <div className="px-4 pb-6">
                   <Motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]">
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base dark:text-neutral-400">
                     {typeof activeCard.content === "function"
                       ? activeCard.content()
                       : activeCard.content}
@@ -171,18 +194,9 @@ export function ExpandableCardDemo({activeCard, setActiveCard}) {
 export const CloseIcon = () => {
   return (
     <Motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.05 } }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
