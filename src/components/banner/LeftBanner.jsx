@@ -113,7 +113,7 @@ const LeftBanner = () => {
                                         Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
                                         I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
                                     </p>
-                                    <LinkButton link={"https://drive.google.com/file/d/13SjT10aezbXpE8Ync9-aZ2Cy9CgxXnU2/view?usp=sharing"}/>
+                                    <LinkButton link={"https://drive.google.com/file/d/1cCK4JFnFRKXC_nFA1kEVWNdQLJguFIr-/view?usp=sharing"}/>
                                 </div>
                             </div>
                             <div className='xl:translate-x-[13%]'>
