@@ -4,7 +4,7 @@ import { CardHoverEffectDemo } from './HoverEffect';
 
 import 'react-medium-image-zoom/dist/styles.css';
 import { createPortal } from 'react-dom';
-import { sampleImg } from '../../assets/index'
+import { certifWalubi, certifEPICVision } from '../../assets/index'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -195,19 +195,21 @@ export function CertificateSection() {
     const certifData = [
         {
             image: {
-                src: sampleImg,
+                src: certifEPICVision,
                 alt: 'Certificate 1',
-                link: 'https://example.com/cert1'
+                link: 'https://drive.google.com/file/d/1_75z92mvT56m0kVSAgOMTtpLsDCISIfS/view?usp=sharing'
             },
-            description: 'Not Yet',
+            title: 'Certificate as committee in HIMTI@Semarang Epic Vision Webinar',
+            description: 'Served as a committee member in HIMTI Epic Vision, a large-scale event organized by the Information Technology student association at BINUS University. Played an integral role in planning and executing event operations, showcasing leadership, collaboration, and effective communication within a dynamic team environment.',
         },
         {
             image: {
-                src: sampleImg,
+                src: certifWalubi,
                 alt: 'Certificate 2',
-                link: 'https://example.com/cert2'
+                link: 'https://drive.google.com/file/d/1gGLVFAHtiIhtNHnHS7X59fmYg8uPG6vG/view?usp=sharing'
             },
-            description: 'Not Yet',
+            title: 'Certificate as volunteer in WALUBI',
+            description: 'Actively contributed as a volunteer under WALUBI, supporting community service and organizational initiatives that promote compassion, unity, and cultural awareness. Demonstrated teamwork, adaptability, and a strong sense of social responsibility in diverse community settings.',
         },
             
     ];
@@ -245,9 +247,15 @@ export function AboutBanner({ certif }) {
                                 className="rounded-lg cursor-zoom-in w-[370px] sm:w-[360px] h-auto transition-transform duration-300 ease-in-out hover:scale-[1.03]"
                                 onClick={() => openModal(index)}
                             />
-                            <p className="max-w-80 text-sm text-neutral-800 dark:text-neutral-200">
-                                {item.description}
-                            </p>
+                            <div className='flex flex-col gap-5'>
+                                <h1 className='text-lg text-neutral-200'>
+                                    {item.title}
+                                </h1>
+                                <p className="max-w-80 text-sm text-neutral-800 dark:text-neutral-200">
+                                    {item.description}
+                                </p>
+
+                            </div>
                         </li>
                     ))}
                 </ul>
