@@ -8,12 +8,12 @@ export const projects = [
     { title: <SiHtml5/>, percent: 85 },
     { title: <FaCss3/>, percent: 70 },
     { title: <SiTailwindcss/>, percent: 80 },
-    { title: <SiPython/>, percent: 80 },
-    { title: <SiStreamlit/>, percent: 85},
+    { title: <SiPython/>, percent: 62 },
+    { title: <SiStreamlit/>, percent: 75},
     { title: <FaReact/>, percent: 70 },
-    { title: <SiFigma/>, percent: 68 },
-    { title: <FaUnity/>, percent: 71 },
-    { title: <SiArduino/>, percent: 62 },
+    { title: <SiFigma/>, percent: 65 },
+    { title: <FaUnity/>, percent: 62 },
+    { title: <SiArduino/>, percent: 65 },
 ];
 
 export function CardHoverEffectDemo() {
