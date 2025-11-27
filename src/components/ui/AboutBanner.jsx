@@ -4,7 +4,7 @@ import { CardHoverEffectDemo } from './HoverEffect';
 
 import 'react-medium-image-zoom/dist/styles.css';
 import { createPortal } from 'react-dom';
-import { certifWalubi, certifEPICVision } from '../../assets/index'
+import { certifWalubi, certifEPICVision, certifTECHNO2024 } from '../../assets/index'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -13,6 +13,38 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper/modules';
+
+export function CertificateSection() {
+    const certifData = [
+        {
+            image: {
+                src: certifEPICVision,
+                alt: 'Certificate 1',
+            },
+            title: 'Certificate as committee in HIMTI@Semarang Epic Vision Webinar',
+            description: 'Served as a committee member in HIMTI Epic Vision, a large-scale event organized by the Information Technology student association at BINUS University. Played an integral role in planning and executing event operations, showcasing leadership, collaboration, and effective communication within a dynamic team environment.',
+        },
+        {
+            image: {
+                src: certifWalubi,
+                alt: 'Certificate 2',
+            },
+            title: 'Certificate as volunteer in WALUBI',
+            description: 'Actively contributed as a volunteer under WALUBI, supporting community service and organizational initiatives that promote compassion, unity, and cultural awareness. Demonstrated teamwork, adaptability, and a strong sense of social responsibility in diverse community settings.',
+        },
+        {
+            image: {
+                src: certifTECHNO2024,
+                alt: 'Certificate 3',
+            },
+            title: 'Certificate as HIMTI KIT committee in HIMTI TECHNO 2024 "Transcend"',
+            description: 'Actively served as a committee member in the HIMTI KIT Division during TECHNO 2024 “Transcend,” the official welcoming event for incoming Computer Science students from all BINUS University regions.',
+        },
+            
+    ];
+
+    return (<AboutBanner certif={certifData} />);
+}
 
 // Fungsi download reusable
 export function downloadFileAtUrl(url) {
@@ -38,58 +70,6 @@ export function downloadFileAtUrl(url) {
         });
 }
 
-// Tombol download SVG
-function DownloadButton({ url }) {
-    return (
-        <button
-            onClick={() => downloadFileAtUrl(url)}
-            className="bg-white hover:bg-prim hover:text-quart border border-gray-300 rounded-full p-2 shadow transition-colors"
-            title="Download image"
-            aria-label="Download image"
-        >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width={24} height={24}>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-            </svg>
-        </button>
-    );
-}
-
-// Tombol link (rantai)
-function LinkButton({ link }) {
-    return (
-        <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white hover:bg-prim border hover:text-quart border-gray-300 rounded-full p-2 shadow transition-colors"
-            title="Open Certificate Link"
-            aria-label="Open Certificate Link"
-        >
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
-            >
-                <path
-                    d="M13.5442 10.4558C11.8385 8.75022 9.07316 8.75022 7.36753 10.4558L4.27922 13.5442C2.57359 15.2498 2.57359 18.0152 4.27922 19.7208C5.98485 21.4264 8.75021 21.4264 10.4558 19.7208L12 18.1766"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M10.4558 13.5442C12.1614 15.2498 14.9268 15.2498 16.6324 13.5442L19.7207 10.4558C21.4264 8.75021 21.4264 5.98485 19.7207 4.27922C18.0151 2.57359 15.2497 2.57359 13.5441 4.27922L12 5.82338"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-        </a>
-    );
-}
-
 // Tombol close (X)
 function CloseButton({ onClick }) {
     return (
@@ -113,7 +93,7 @@ function ZoomModal({
     onClose, 
 }) {
     const [isMounted, setIsMounted] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(currentIndex); // Lacak index aktif
+    // const [activeIndex, setActiveIndex] = useState(currentIndex); // Lacak index aktif
     const swiperRef = useRef(null); // Gunakan useRef untuk menangkap instance Swiper
 
     useEffect(() => {
@@ -125,7 +105,7 @@ function ZoomModal({
         };
     }, []);
 
-    const currentImage = images[currentIndex];
+    // const currentImage = images[currentIndex];
 
     return createPortal(
         <div className={`fixed top-0 left-0 w-full h-full bg-prim bg-opacity-80 flex justify-center items-center z-[9999] transition-opacity duration-300 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
@@ -133,7 +113,7 @@ function ZoomModal({
                 <div className='relative max-w-[80%]'>
                     <Swiper
                         // onSwiper={(swiper) => (swiperRef.current = swiper)}
-                        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // update index aktif
+                        // onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // update index aktif
                         navigation={{
                             nextEl: '.custom-next',
                             prevEl: '.custom-prev',
@@ -158,9 +138,6 @@ function ZoomModal({
                     {/* Tombol di pojok kanan atas */}
                     {/* <div className="fixed top-10 -translate-x-1/2 sm:right-20 flex  gap-2"> */}
                     <div className="fixed top-10 left-1/2 -translate-x-1/2 sm:left-auto sm:right-20 flex items-center justify-center gap-2 z-50">
-
-                        <DownloadButton url={images[activeIndex]?.src} /> {/* hanya satu tombol */}
-                        <LinkButton link={currentImage.link} />
                         <CloseButton onClick={onClose} />
                     </div>
 
@@ -191,31 +168,7 @@ function ZoomModal({
 }
 
 
-export function CertificateSection() {
-    const certifData = [
-        {
-            image: {
-                src: certifEPICVision,
-                alt: 'Certificate 1',
-                link: 'https://drive.google.com/file/d/1_75z92mvT56m0kVSAgOMTtpLsDCISIfS/view?usp=sharing'
-            },
-            title: 'Certificate as committee in HIMTI@Semarang Epic Vision Webinar',
-            description: 'Served as a committee member in HIMTI Epic Vision, a large-scale event organized by the Information Technology student association at BINUS University. Played an integral role in planning and executing event operations, showcasing leadership, collaboration, and effective communication within a dynamic team environment.',
-        },
-        {
-            image: {
-                src: certifWalubi,
-                alt: 'Certificate 2',
-                link: 'https://drive.google.com/file/d/1gGLVFAHtiIhtNHnHS7X59fmYg8uPG6vG/view?usp=sharing'
-            },
-            title: 'Certificate as volunteer in WALUBI',
-            description: 'Actively contributed as a volunteer under WALUBI, supporting community service and organizational initiatives that promote compassion, unity, and cultural awareness. Demonstrated teamwork, adaptability, and a strong sense of social responsibility in diverse community settings.',
-        },
-            
-    ];
 
-    return (<AboutBanner certif={certifData} />);
-}
 
 export function AboutBanner({ certif }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
