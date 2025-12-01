@@ -71,7 +71,7 @@ function LinkButton({ link }) {
 
 const LeftBanner = () => {
     const [text] = useTypewriter({
-        words: ["College Student.", "UI Designer.", "Mid Coder."],
+        words: ["College Student.", "UI Designer.", "Code Enthusiast."],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,
