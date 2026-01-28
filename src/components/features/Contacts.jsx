@@ -93,7 +93,7 @@ const Contacts = () => {
 
   return (
     <section
-      className=" w-full flex flex-col justify-center gap-5 "
+      className=" w-full flex flex-col justify-center gap-5 bg-linear-90 from-tert to-prim"
     >
       <div className="relative flex flex-col justify-center items-center w-full h-fit">
         <h1 className="mt-10 bg-gradient-to-br from-tert to-quart bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-4xl">
@@ -156,6 +156,8 @@ const Contacts = () => {
       <h1 className="bg-gradient-to-br from-tert to-quart bg-clip-text text-center text-md font-medium tracking-tight text-transparent md:text-lg">
       “Every pixel tells a story. Thank you for visiting!”
         </h1>
+      <div className='h-20 flex justify-center items-center text-md text-quart italic text-center'>✨ See more magical things in this website in tablet or laptop or PC ✨</div>
+            <div className='flex justify-center items-center text-sm text-quart py-4'>&copy; 2025</div>
     </section>
   )
 }

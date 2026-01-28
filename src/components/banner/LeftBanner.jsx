@@ -24,7 +24,7 @@ import Items from './Items';
 //   }, []);
 
 //   return (
-    
+
 //       <div style={centerStyle}>
 //         <Items />
 //       </div>
@@ -78,56 +78,56 @@ const LeftBanner = () => {
         delaySpeed: 2000,
     });
 
-    return (    
+    return (
         <>
-                <div className='w-full mt-0 pt-0 bg-none ml-0
-             md:h-auto  bg-quart flex flex-col'>
-                    <div className=' flex flex-col h-full xl:flex-row xl:justify-center xl:gap-80 lg:justify-between lg:gap-1'>
-                        <div className={` h-full
+            <div className='w-full mt-0 pt-0 bg-none ml-0
+                md:h-auto  bg-quart flex flex-col'>
+                <div className=' flex flex-col h-full xl:flex-row xl:justify-center xl:gap-80 lg:justify-between lg:gap-1'>
+                    <div className={` h-full
                         xl:-ml-50
                         mt-0 pt-65 
                         md:pt-65
                         lg:pt-35
-                         xl:w-200 
+                        xl:w-200 
                         bg-prim xl:bg-transparent
                         `}
-                        >
-                            <div className='relative flex flex-col gap-5 text-quart pt-15 justify-center
+                    >
+                        <div className='relative flex flex-col gap-5 text-quart pt-15 justify-center items-center px-7
                                 lg:pt-0 sm:justify-items-start sm:px-0 sm:items-center lg:ml-16 xl:ml-5 xl:px-10 xl:py-5 lg:items-start xl:bg-prim'>
-                                <div className='py-10 flex flex-col gap-5'>
-                                    <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
-                                    <h1 className='text-6xl font-bold text-quart'>
-                                        Hi, I'm {" "}
-                                        <span className='text-tert capitalize'>Bryant</span>
-                                    </h1>
-                                    <h2 className='text-4xl font-bold text-quart'>
-                                        {["A", "E", "I", "O", "U"].includes(text.charAt(0).toUpperCase()) ? "an " : "a "}
-                                        <span>{text}</span>
-                                        <Cursor
-                                            cursorBlinking="false"
-                                            cursorStyle="|"
-                                            cursorColor="#00adb5"
-                                        />
-                                    </h2>
-                                    <p className='max-w-120'>
-                                        Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
-                                        I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
-                                    </p>
-                                    <LinkButton link={"https://drive.google.com/file/d/1cCK4JFnFRKXC_nFA1kEVWNdQLJguFIr-/view?usp=sharing"}/>
-                                </div>
-                            </div>
-                            <div className='xl:translate-x-[13%]'>
-                                <Items />
+                            <div className='py-10 flex flex-col gap-5'>
+                                <h1 className='text-lg'>WELCOME TO MY WEBSITE</h1>
+                                <h1 className='text-6xl font-bold text-quart'>
+                                    Hi, I'm {" "}
+                                    <span className='text-tert capitalize'>Bryant</span>
+                                </h1>
+                                <h2 className='text-4xl font-bold text-quart'>
+                                    {["A", "E", "I", "O", "U"].includes(text.charAt(0).toUpperCase()) ? "an " : "a "}
+                                    <span>{text}</span>
+                                    <Cursor
+                                        cursorBlinking="false"
+                                        cursorStyle="|"
+                                        cursorColor="#00adb5"
+                                    />
+                                </h2>
+                                <p className='max-w-120'>
+                                    Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
+                                    I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
+                                </p>
+                                <LinkButton link={"https://drive.google.com/file/d/1cCK4JFnFRKXC_nFA1kEVWNdQLJguFIr-/view?usp=sharing"} />
                             </div>
                         </div>
-                        <div className='flex w-66 h-66 rounded-full border-4 border-quart z-20 mt-11 self-center absolute overflow-hidden drop-shadow-lg drop-shadow-tert
+                        <div className='xl:translate-x-[13%]'>
+                            <Items />
+                        </div>
+                    </div>
+                    <div className='flex w-66 h-66 rounded-full border-4 border-quart z-20 mt-11 self-center absolute overflow-hidden drop-shadow-lg drop-shadow-tert
                         lg:w-100 lg:h-123 lg:rounded-xl lg:border-4 lg:border-quart lg:ml-[90%] lg:-translate-x-1/2 lg:mt-30 lg:items-center
                         xl:w-95 xl:h-120 xl:rounded-xl xl:border-t-[6px] xl:border-l-[6px] xl:border-t-quart xl:border-l-quart xl:-mt-47 xl:ml-255
                         '>
-                            <img src={bannerImg} alt='bannerImg' className='w-full h-full object-cover ' />
-                        </div>
+                        <img src={bannerImg} alt='bannerImg' className='w-full h-full object-cover ' />
                     </div>
                 </div>
+            </div>
         </>
     )
 }

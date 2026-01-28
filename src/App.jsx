@@ -58,8 +58,9 @@ function App() {
   return (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <div className = "w-full h-auto overflow-clip">
-      <div className="max-w-full mx-auto bg-linear-90 from-tert to-prim">
+    <div className = "w-full h-auto overflow-clip debug-screens">
+      <div className="max-w-full mx-auto bg-prim xl:bg-quart">
+      {/* <div className="max-w-full mx-auto bg-white"> */}
         <Navbar />
         <div>
           <PreviewTracingBeam contentRef={contentRef}/>
@@ -69,8 +70,6 @@ function App() {
             <Projects/>
             <Experience/>
             <Contacts/>
-            <div className='h-20 flex justify-center items-center text-md text-quart italic text-center'>✨ See more magical things in this website in tablet or laptop or PC ✨</div>
-            <div className='flex justify-center items-center text-sm text-quart py-4'>&copy; 2025</div>
           </div>
         </div>
       </div>

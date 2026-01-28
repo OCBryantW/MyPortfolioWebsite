@@ -184,41 +184,44 @@ export function AboutBanner({ certif }) {
     };
 
     return (
-        <div className='flex gap-16 flex-col lg:flex-row w-full sm:px-15 px-3 xl:px-35 '>
-            <div className="mt-10 max-w-full md:w-full lg:w-[70%] p-10 h-auto bg-black/30 backdrop-blur-md rounded-xl shadow-lg">
-                <h2 className="text-2xl md:text-4xl w-full flex justify-center items-center mb-[40px] sm:mb-8 text-black dark:text-white max-w-4xl">
-                    Certification
-                </h2>
-                <div className='w-full flex justify-center items-center'></div>
-                <ul className={`flex flex-col justify-center items-center gap-10`}>
-                
-                    {(certif || []).map((item, index) => (
-                        <li key={index} className="w-full flex-shrink-0 flex flex-col md:flex-row gap-4 items-center justify-center px-4">
-                            <img
-                                src={item.image.src}
-                                alt={item.image.alt}
-                                className="rounded-lg cursor-zoom-in w-[370px] sm:w-[360px] h-auto transition-transform duration-300 ease-in-out hover:scale-[1.03]"
-                                onClick={() => openModal(index)}
-                            />
-                            <div className='flex flex-col gap-5'>
-                                <h1 className='text-lg text-neutral-200'>
-                                    {item.title}
-                                </h1>
-                                <p className="max-w-80 text-sm text-neutral-800 dark:text-neutral-200">
-                                    {item.description}
-                                </p>
+        <div className='flex gap-16 flex-col lg:flex-row lg:gap-5 w-full sm:px-15 px-3 xl:px-35 '>
+            <div className="mt-10 max-w-[80vw] p-10 h-auto bg-black/30 backdrop-blur-md rounded-xl shadow-lg self-center">
+                <>
+                    <h2 className="text-2xl md:text-4xl w-full flex justify-center items-center mb-[40px] sm:mb-8 text-black dark:text-white max-w-4xl">
+                        Certification
+                    </h2>
+                    <div className='w-full flex justify-center items-center'></div>
+                    <ul className={`flex flex-col justify-center items-center gap-10`}>
+                    
+                        {(certif || []).map((item, index) => (
+                            <li key={index} className="w-full flex-shrink-0 flex flex-col md:flex-row lg:flex-col 2xl:flex-row gap-4 items-center justify-center px-4">
+                                <img
+                                    src={item.image.src}
+                                    alt={item.image.alt}
+                                    className="rounded-lg cursor-zoom-in w-[370px] sm:w-[360px] h-auto transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+                                    onClick={() => openModal(index)}
+                                />
+                                <div className='flex flex-col gap-5 max-w-90 items-start'>
+                                    <h1 className='text-lg text-neutral-200 font-semibold'>
+                                        "{item.title}"
+                                    </h1>
+                                    <p className="text-neutral-800 dark:text-neutral-200">
+                                        {item.description}
+                                    </p>
 
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-                {isModalOpen && (
-                    <ZoomModal
-                        images={certif.map((item) => item.image)}
-                        currentIndex={current}
-                        onClose={closeModal}
-                    />
-                )}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                    {isModalOpen && (
+                        <ZoomModal
+                            images={certif.map((item) => item.image)}
+                            currentIndex={current}
+                            onClose={closeModal}
+                        />
+                    )}
+
+                </>
             </div>
             <CardHoverEffectDemo />
         </div>
