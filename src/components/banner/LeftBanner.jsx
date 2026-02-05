@@ -3,69 +3,30 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { bannerImg } from '../../assets/index'
 import '../../App.css'
 import Items from './Items';
-// import { useEffect, useState } from "react";
-
-// import { useEffect, useState } from "react";
-
-// function CenteredItems() {
-//   const [centerStyle, setCenterStyle] = useState({});
-
-//   useEffect(() => {
-//     function updateCenter() {
-//       const screenWidth = window.innerWidth;
-//       const itemWidth = 200; // misalnya lebar tetap <Items />
-//       const left = (screenWidth - itemWidth) / 5;
-//       setCenterStyle({ width: itemWidth, marginLeft: left });
-//     }
-
-//     updateCenter();
-//     window.addEventListener("resize", updateCenter);
-//     return () => window.removeEventListener("resize", updateCenter);
-//   }, []);
-
-//   return (
-
-//       <div style={centerStyle}>
-//         <Items />
-//       </div>
-//   );
-// }
-
+import CVPDF from '../../assets/CV_Oei_C.Bryant_W.pdf'
+import { Download } from 'lucide-react';
 
 // Tombol link (rantai)
-function LinkButton({ link }) {
+function LinkButton() {
+    const handleDownload = () => {
+        const link = document.createElement('a')
+        link.href = CVPDF;
+        link.download = 'CV_Oei_C.Bryant_W.pdf';
+        document.body.appendChild(link);
+        link.click()
+        document.body.removeChild(link);
+    }
+
     return (
-        <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <button
+            onClick={handleDownload}
             className="bg-white hover:bg-prim border text-prim hover:text-quart border-gray-300 rounded-full p-2 shadow transition-colors w-fit flex gap-4 items-center px-4 py-3"
-            title="Open CV Link"
-            aria-label="Open CV Link"
+            title="Download CV"
+            aria-label="Download CV"
         >
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
-            >
-                <path
-                    d="M13.5442 10.4558C11.8385 8.75022 9.07316 8.75022 7.36753 10.4558L4.27922 13.5442C2.57359 15.2498 2.57359 18.0152 4.27922 19.7208C5.98485 21.4264 8.75021 21.4264 10.4558 19.7208L12 18.1766"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M10.4558 13.5442C12.1614 15.2498 14.9268 15.2498 16.6324 13.5442L19.7207 10.4558C21.4264 8.75021 21.4264 5.98485 19.7207 4.27922C18.0151 2.57359 15.2497 2.57359 13.5441 4.27922L12 5.82338"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-            <h3>View Resume</h3>
-        </a>
+            <Download/>
+            <h3>Download CV</h3>
+        </button>
     );
 }
 
@@ -77,6 +38,7 @@ const LeftBanner = () => {
         deleteSpeed: 10,
         delaySpeed: 2000,
     });
+    // const [pdfFile, setPdfFile] = useState('');
 
     return (
         <>
@@ -113,7 +75,9 @@ const LeftBanner = () => {
                                     Hello, I'm Oei Christopher Bryant Widyanata, a Computer Science undergraduate at Bina Nusantara University.
                                     I have a strong interest in web development and a passion for exploring new technologies. With experience in various programming languages and their practical implementation in projects, I continuously seek opportunities to expand my skills and stay current with industry trends.
                                 </p>
-                                <LinkButton link={"https://drive.google.com/file/d/1cCK4JFnFRKXC_nFA1kEVWNdQLJguFIr-/view?usp=sharing"} />
+                                
+                                <LinkButton/>
+                                
                             </div>
                         </div>
                         <div className='xl:translate-x-[13%]'>

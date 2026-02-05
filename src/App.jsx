@@ -9,6 +9,8 @@ import Projects from './components/features/Projects'
 import { PreviewTracingBeam } from './components/ui/TracingBeamDemo'
 import Lenis from 'lenis';
 
+
+
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll ke atas saat refresh
@@ -54,11 +56,12 @@ function App() {
 
     requestAnimationFrame(raf)
   }, [])
+  // const [isPDFOpen, setIsPDFOpen] = useState(false);
 
   return (
     <>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <div className = "w-full h-auto overflow-clip debug-screens">
+    <div className = "w-full h-auto overflow-clip">
       <div className="max-w-full mx-auto bg-prim xl:bg-quart">
       {/* <div className="max-w-full mx-auto bg-white"> */}
         <Navbar />
@@ -66,6 +69,7 @@ function App() {
           <PreviewTracingBeam contentRef={contentRef}/>
           <div ref={contentRef} className='content'>
             <Banner />
+            {/* <PDFViewer/> */}
             <About/>
             <Projects/>
             <Experience/>
